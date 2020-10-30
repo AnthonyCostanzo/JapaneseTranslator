@@ -5,6 +5,7 @@ def translate(filename):
     try:
         with open(filename,mode='r+') as file:
             lines = file.readlines()
+            lines="".join(lines).splitlines()
             for line in lines:
                 translated = translator.translate(line,dest='ja')
                 file.write(f'{line} translated = {translated.text}\n')
